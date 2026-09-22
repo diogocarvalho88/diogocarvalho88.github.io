@@ -1,0 +1,11 @@
+{
+  "title": "The Problem of Reinforcement Learning with Many Discrete Actions",
+  "type": "document",
+  "year": 2022,
+  "context": "Accompanying survey · GAIPS Reinforcement Learning Reading Group",
+  "description": "A short survey of the challenges, existing approaches, and research directions for reinforcement learning with large discrete action spaces.",
+  "pdf": "/materials/reinforcement-learning-many-discrete-actions-survey.pdf",
+  "pages": 5,
+  "size": "209 KB",
+  "presentationVenues": [{"name": "GAIPS RL Reading Group"}]
+}
