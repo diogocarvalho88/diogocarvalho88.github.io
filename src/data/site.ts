@@ -9,6 +9,9 @@ export const links = {
   instagram: 'https://www.instagram.com/diogoocarvalio/',
   goodreads: 'https://www.goodreads.com/friend/i?invite_token=ZjdiODgwMmMtZGJmYS00MTFiLWFkNzEtYmE0MDBjODg0NGM0',
   curtiZona: 'https://diogocarvalho88.github.io/curti-zona-fc/',
+  minifootball: 'https://minifootball.pt/lisboa/',
+  tigerbox: 'https://tigerbox.pt/',
+  chezmoi: 'https://chezmoi.com.pt/',
   inesc: 'https://www.inesc-id.pt/', tecnico: 'https://tecnico.ulisboa.pt/en/', rezolve: 'https://rezolve.com/'
 };
 
@@ -26,15 +29,23 @@ export const personalProfiles = [
 ] as const;
 
 export const currentlyReading = [
-  'Bambino a Roma',
-  'O Caçador de Elefantes Invisíveis',
-  'À Caça de Sombras'
+  { title: 'Bambino a Roma', detail: 'Chico Buarque', url: 'https://penguinlivros.pt/loja/companhia-das-letras/livro/bambino-a-roma/' },
+  { title: 'O Caçador de Elefantes Invisíveis', detail: 'Mia Couto', url: 'https://www.bertrand.pt/livro/o-cacador-de-elefantes-invisiveis-mia-couto/25460181' },
+  { title: 'À Caça de Sombras', detail: 'Robert Bryndza', url: 'https://almadoslivros.pt/products/a-caca-de-sombras' }
 ] as const;
 
 export const personalUpdates = [
   { label: 'Reading now', entries: [...currentlyReading] },
-  { label: 'Playing', entries: ['Pokémon FireRed, Sword & Brilliant Diamond', 'Hogwarts Legacy and Assassin’s Creed: The Rebel Collection'] },
-  { label: 'Watching', entries: ['The Gentlemen, Only Murders in the Building, Reacher, and a Game of Thrones rewatch', 'Recent films I enjoyed include Odisseia and Obsession'] }
+  { label: 'Playing · Nintendo Switch', entries: [
+    { title: 'Pokémon FireRed, Sword & Brilliant Diamond', detail: 'Pokémon', url: 'https://www.pokemon.com/us/pokemon-video-games/' },
+    { title: 'Hogwarts Legacy', detail: 'Nintendo Switch', url: 'https://www.hogwartslegacy.com/' },
+    { title: 'Assassin’s Creed: The Rebel Collection', detail: 'Black Flag & Rogue · Nintendo Switch', url: 'https://www.ubisoft.com/en-us/game/assassins-creed/rebel-collection' }
+  ] },
+  { label: 'Watching', entries: [
+    { title: 'The Gentlemen, Only Murders in the Building & Reacher', detail: 'Series', url: null },
+    { title: 'Game of Thrones', detail: 'Rewatch', url: null },
+    { title: 'Odisseia & Obsession', detail: 'Recent films I enjoyed', url: null }
+  ] }
 ] as const;
 
 export const emails = ['diogo.s.carvalho@tecnico.ulisboa.pt', 'diogocarvalho@rezolve.com', 'carvalhomm88@gmail.com'];

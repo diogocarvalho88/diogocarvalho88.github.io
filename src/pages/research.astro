@@ -19,6 +19,15 @@ const materialGroups: [string, CollectionEntry<'materials'>[]][] = [
 ];
 const isMaterial = (item: CollectionEntry<'materials'> | undefined): item is CollectionEntry<'materials'> => Boolean(item);
 const filters = ['all', ...new Set(pubs.map(p => p.data.status))];
+const advisors = [
+  { name: 'Francisco S. Melo', role: 'PhD advisor', url: 'https://scholar.google.com/citations?hl=en&user=5AEeWU4AAAAJ' },
+  { name: 'Pedro A. Santos', role: 'PhD advisor', url: 'https://scholar.google.com/citations?hl=en&user=G-KLR4MAAAAJ' }
+];
+const excludedAuthors = new Set(['Diogo S. Carvalho', 'Diogo Carvalho', ...advisors.map(advisor => advisor.name)]);
+const coauthors = [...new Set(pubs.flatMap(pub => pub.data.authors))]
+  .filter(name => !excludedAuthors.has(name))
+  .sort((a, b) => a.localeCompare(b))
+  .map(name => ({ name, url: `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${name}"`)}` }));
 const articleLd = pubs.map(({ data: p }) => ({
   '@context': 'https://schema.org', '@type': 'ScholarlyArticle', headline: p.title,
   author: p.authors.map(name => ({ '@type': 'Person', name })), datePublished: String(p.year),
@@ -30,6 +39,16 @@ const articleLd = pubs.map(({ data: p }) => ({
   <section class="page-hero shell"><p class="eyebrow">Research</p><h1>Reinforcement learning across <em>timescales and levels of abstraction.</em></h1><p>My work studies convergence, hierarchy, temporal abstraction, planning, and multi-agent coordination—from mathematical analysis to the evaluation of deployed agentic systems.</p></section>
   <section class="research-map shell">{themes.map(t => <article><span>{t.n}</span><h2>{t.title}</h2><p>{t.text}</p></article>)}</section>
   <div class="shell section-space profiles-section"><ProfileLinks /></div>
+  <section class="research-community shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Research community</p><h2>Advisors & coauthors</h2></div><p>People behind the work</p></div>
+    <div class="advisor-grid">
+      {advisors.map(advisor => <a href={advisor.url} target="_blank" rel="noreferrer"><span>{advisor.role}</span><strong>{advisor.name}</strong><em>Google Scholar ↗</em></a>)}
+    </div>
+    <div class="coauthor-directory">
+      <p>Publication coauthors</p>
+      <div>{coauthors.map(coauthor => <a href={coauthor.url} target="_blank" rel="noreferrer" aria-label={`Search Google Scholar for ${coauthor.name}`}>{coauthor.name}<span>↗</span></a>)}</div>
+    </div>
+  </section>
   <section class="all-pubs shell section-space">
     <div class="section-heading"><div><p class="eyebrow">Publications</p><h2>Complete list</h2></div><p>{pubs.length} works · 2020—2026</p></div>
     <div class="filters" aria-label="Filter publications">{filters.map((filter,i) => <button data-filter={filter} aria-pressed={i===0 ? 'true':'false'}>{filter}</button>)}</div>

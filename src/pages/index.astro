@@ -2,11 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationCard from '../components/PublicationCard.astro';
 import { getCollection } from 'astro:content';
-import { academicProfiles, affiliations, links, personalUpdates } from '../data/site';
-const pubs = (await getCollection('publications')).filter(p => p.data.featured).sort((a,b) => b.data.year-a.data.year).slice(0,3);
+import { academicProfiles, affiliations } from '../data/site';
+const allPubs = await getCollection('publications');
+const selectedIds = ['multi-bellman', 'nonstationary', 'feudal', 'qlearning'];
+const pubs = allPubs.filter(pub => selectedIds.includes(pub.id)).sort((a,b) => selectedIds.indexOf(a.id)-selectedIds.indexOf(b.id));
 const materials = await getCollection('materials');
 const materialIndex = new Map(materials.map(item => [item.id, item]));
-const events = (await getCollection('events')).filter(event => event.data.featured).sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0,4);
+const events = (await getCollection('events')).filter(event => event.data.featured).sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0,3);
+const latestPublications = allPubs.sort((a,b) => b.data.year-a.data.year).slice(0,3);
+const news = [
+  ...events.map(event => ({ sortKey: event.data.date ?? '', date: event.data.date ?? '', dateLabel: event.data.dateLabel ?? new Date(event.data.date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}), type: event.data.type, title: event.data.title, venue: event.data.venue, url: event.data.officialUrl ?? '/research/' })),
+  ...latestPublications.map(pub => ({ sortKey: `${pub.data.year}-01-01`, date: String(pub.data.year), dateLabel: String(pub.data.year), type: 'publication', title: pub.data.title, venue: pub.data.venue, url: pub.data.doi ?? pub.data.pdf ?? '/research/' }))
+].sort((a,b) => b.sortKey.localeCompare(a.sortKey));
 ---
 <BaseLayout title="Diogo S. Carvalho — Research Scientist & AI Engineer" description="Research scientist and AI engineer studying reinforcement learning, hierarchical decision-making, planning, multi-agent systems, and reliable agentic AI.">
   <section class="hero shell">
@@ -51,24 +58,17 @@ const events = (await getCollection('events')).filter(event => event.data.featur
   </section>
 
   <section class="activity shell section-space">
-    <div class="section-heading"><div><p class="eyebrow">Updates</p><h2>Recent activity</h2></div><a href="/research/">Full talks & presentations archive →</a></div>
-    <div class="activity-list">{events.map(event => <a class="activity-item" href={event.data.officialUrl} target="_blank" rel="noreferrer" aria-label={`${event.data.title} official event page (opens in a new tab)`}>
-      <time datetime={event.data.date}>{event.data.dateLabel ?? new Date(event.data.date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</time>
-      <div><span>{event.data.type}</span><h3>{event.data.title}</h3></div>
-      <p>{event.data.venue}</p><strong aria-hidden="true">↗</strong>
+    <div class="section-heading"><div><p class="eyebrow">Latest</p><h2>News & activity</h2></div><a href="/research/">Full research record →</a></div>
+    <div class="activity-list">{news.map(item => <a class="activity-item" href={item.url} target={item.url.startsWith('/') ? undefined : '_blank'} rel={item.url.startsWith('/') ? undefined : 'noreferrer'} aria-label={`${item.title} (${item.type})`}>
+      <time datetime={item.date}>{item.dateLabel}</time>
+      <div><span>{item.type}</span><h3>{item.title}</h3></div>
+      <p>{item.venue}</p><strong aria-hidden="true">↗</strong>
     </a>)}</div>
   </section>
 
-  <section class="personal shell section-space">
-    <div class="section-heading personal-heading"><div><p class="eyebrow">Beyond work</p><h2>A more personal corner</h2></div><div class="personal-links"><a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a><a href={links.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={links.goodreads} target="_blank" rel="noreferrer">Goodreads ↗</a><a href={links.curtiZona} target="_blank" rel="noreferrer">Curti Zona FC ↗</a></div></div>
-    <p class="personal-intro">Outside research and engineering, I read widely, play games, watch films and series, train, cook, and keep music and football close. This is a small, occasionally updated snapshot—not a complete catalogue.</p>
-    <div class="personal-updates">{personalUpdates.map(update => <article><span>{update.label}</span><ul>{update.entries.map(entry => <li>{entry}</li>)}</ul></article>)}</div>
-    <div class="personal-notes">
-      <p><strong>Music</strong><span>Grade 8 Piano, Trinity College London · Escola de Música Acorde, Mem Martins</span></p>
-      <p><strong>Football</strong><span>Played through age 19 for SC Lourel, SU 1.º Dezembro, and Mem Martins SC</span></p>
-      <p><strong>Training</strong><span>Olympic weightlifting, CrossFit, and Hyrox at Tigerbox · PRs: 90 kg clean &amp; jerk and 70 kg snatch</span></p>
-      <p><strong>Cooking</strong><span>Cooking Levels I & II and a Greek cuisine workshop</span></p>
-    </div>
+  <section class="personal-preview shell section-space">
+    <div><p class="eyebrow">Personal</p><h2>Outside work</h2></div>
+    <div><p>I read, play games on Nintendo Switch, train, cook, and play Sunday football with Curti Zona FC. I keep a few current notes and links on a separate page.</p><a class="inline-link" href="/personal/">Personal notes →</a></div>
   </section>
 
   <section class="affiliations shell"><p class="eyebrow">Affiliations & profiles</p><div>{[...affiliations, ...academicProfiles].map(([label,url]) => <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label} <span aria-hidden="true">↗</span></a>)}</div></section>

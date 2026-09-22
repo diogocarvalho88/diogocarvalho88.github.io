@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { links, personalProfiles, personalUpdates } from '../data/site';
+const pageProfiles = [['LinkedIn', links.linkedin], ...personalProfiles] as const;
+---
+<BaseLayout title="Outside Work — Diogo S. Carvalho" description="Books, games, sport, music, cooking, and occasional personal updates from Diogo S. Carvalho.">
+  <section class="page-hero personal-page-hero shell">
+    <p class="eyebrow">Personal</p>
+    <h1>Outside work.</h1>
+    <p>A concise, occasionally updated record of what I am reading, playing, watching, and doing beyond research and engineering.</p>
+  </section>
+
+  <section class="personal-current shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Current</p><h2>Recent notes</h2></div></div>
+    <div class="personal-updates">{personalUpdates.map(update => <article><span>{update.label}</span><ul>{update.entries.map(entry => <li>{entry.url ? <a href={entry.url} target="_blank" rel="noreferrer"><strong>{entry.title}</strong><small>{entry.detail}</small><em aria-hidden="true">↗</em></a> : <div class="personal-entry"><strong>{entry.title}</strong><small>{entry.detail}</small></div>}</li>)}</ul></article>)}</div>
+  </section>
+
+  <section class="personal-details shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Interests</p><h2>Sport, music & cooking</h2></div></div>
+    <div class="personal-notes">
+      <p><strong>Football</strong><span>Played through age 19 for SC Lourel, SU 1.º Dezembro, and Mem Martins SC. I now play on Sundays for <a href={links.curtiZona} target="_blank" rel="noreferrer">Curti Zona FC ↗</a> in the <a href={links.minifootball} target="_blank" rel="noreferrer">Minifootball SuperLiga Lisboa 2 ↗</a>.</span></p>
+      <p><strong>Training</strong><span>Olympic weightlifting, CrossFit, and Hyrox at <a href={links.tigerbox} target="_blank" rel="noreferrer">Tigerbox ↗</a>. Weightlifting PRs: 90 kg clean &amp; jerk and 70 kg snatch.</span></p>
+      <p><strong>Music</strong><span>Grade 8 Piano, Trinity College London · Escola de Música Acorde, Mem Martins.</span></p>
+      <p><strong>Cooking</strong><span>Cooking Levels I & II and a Greek cuisine workshop at <a href={links.chezmoi} target="_blank" rel="noreferrer">Chezmoi ↗</a>.</span></p>
+    </div>
+  </section>
+
+  <section class="personal-directory shell section-space">
+    <p class="eyebrow">Links</p>
+    <div>{pageProfiles.map(([label,url]) => <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label}<span aria-hidden="true">↗</span></a>)}</div>
+  </section>
+</BaseLayout>
