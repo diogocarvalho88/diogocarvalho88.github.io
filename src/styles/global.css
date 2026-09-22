@@ -11,3 +11,32 @@
 @media(max-width:900px){.profile-links,.milestone{grid-template-columns:1fr}.material-group{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.service-grid article{min-height:0}.archive-list>article{grid-template-columns:130px 1fr}}
 @media(max-width:580px){.profile-groups,.material-grid{grid-template-columns:1fr}.archive-list>article{grid-template-columns:1fr;gap:10px}.material-card{min-height:320px}.milestone-links{flex-direction:column;align-items:flex-start}.profile-links h2,.milestone h2{font-size:34px}}
 @media(max-width:580px){.footer-profiles>div{grid-template-columns:1fr}.footer-profiles a,.footer-profiles a:nth-child(3n+2),.footer-profiles a:nth-child(3n+3){padding-left:0}}
+
+.focus{padding:150px 0 0;border-top:1px solid var(--line)}
+.focus-heading{display:grid;grid-template-columns:minmax(180px,.45fr) 2fr;gap:7vw;align-items:start}
+.focus-heading h2{font-size:clamp(35px,4.8vw,74px);line-height:1.12;letter-spacing:-.04em;font-weight:500;max-width:1100px;margin:0}
+.focus-heading h2 em{font-family:var(--serif);font-weight:500;color:#a27800}
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:80px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.focus-grid article{padding:36px 55px 48px 0;min-height:350px}
+.focus-grid article+article{border-left:1px solid var(--line);padding-left:55px;padding-right:0}
+.focus-grid span{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#a27800}
+.focus-grid h3{font-size:clamp(24px,2.6vw,39px);line-height:1.2;letter-spacing:-.03em;font-weight:500;max-width:580px;margin:32px 0 18px}
+.focus-grid p{max-width:610px;color:var(--muted);font-size:14px}
+.focus-grid a{display:inline-block;margin-top:22px;font:500 10px var(--mono);text-transform:uppercase;text-underline-offset:4px}
+.cv-hero>p:not(.eyebrow){font-size:19px;color:var(--muted);max-width:700px}
+.cv-hero .hero-actions .button{margin-top:0}
+
+@media(max-width:900px){
+  .focus-heading{grid-template-columns:1fr;gap:30px}
+  .focus-grid article{padding-right:35px}
+  .focus-grid article+article{padding-left:35px}
+}
+
+@media(max-width:580px){
+  .focus{padding-top:100px}
+  .focus-grid{grid-template-columns:1fr;margin-top:55px}
+  .focus-grid article,.focus-grid article+article{padding:32px 0 40px;min-height:0;border-left:0}
+  .focus-grid article+article{border-top:1px solid var(--line)}
+  .focus-grid h3{margin-top:18px}
+  .featured .section-heading{flex-direction:column}
+}
