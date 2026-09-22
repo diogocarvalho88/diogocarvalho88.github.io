@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { academicProfiles } from '../data/site';
+import { academicProfiles, personalProfiles } from '../data/site';
 interface Props { title: string; description: string; image?: string; }
 const { title, description, image = '/images/portrait-diogo-carvalho-1200.jpg' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -54,9 +54,9 @@ const jsonLd = {
         <p>Industry</p><a href="mailto:diogocarvalho@rezolve.com">diogocarvalho@rezolve.com</a><button class="copy-email" data-copy="diogocarvalho@rezolve.com" aria-label="Copy industry email">Copy</button>
         <p>General</p><a href="mailto:carvalhomm88@gmail.com">carvalhomm88@gmail.com</a><button class="copy-email" data-copy="carvalhomm88@gmail.com" aria-label="Copy general email">Copy</button>
       </div>
-      <div class="footer-profiles" aria-label="Academic and professional profiles">
+      <div class="footer-profiles" aria-label="Profiles and projects">
         <p>Elsewhere</p>
-        <div>{academicProfiles.map(([label, url]) => <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label}<span aria-hidden="true">↗</span></a>)}</div>
+        <div>{[...academicProfiles, ...personalProfiles].map(([label, url]) => <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label}<span aria-hidden="true">↗</span></a>)}</div>
       </div>
       <div class="footer-bottom"><span>© {new Date().getFullYear()} Diogo S. Carvalho</span><span>Built for clarity. No cookies, no tracking.</span><a href="#main">Back to top ↑</a></div>
     </footer>

@@ -6,6 +6,9 @@ export const links = {
   orcid: 'https://orcid.org/0000-0003-3008-7322',
   gaips: 'https://gaips.inesc-id.pt/team/diogo-carvalho/',
   aihub: 'https://aihub.org/author/diogocarvalho/',
+  instagram: 'https://www.instagram.com/diogoocarvalio/',
+  goodreads: 'https://www.goodreads.com/friend/i?invite_token=ZjdiODgwMmMtZGJmYS00MTFiLWFkNzEtYmE0MDBjODg0NGM0',
+  curtiZona: 'https://diogocarvalho88.github.io/curti-zona-fc/',
   inesc: 'https://www.inesc-id.pt/', tecnico: 'https://tecnico.ulisboa.pt/en/', rezolve: 'https://rezolve.com/'
 };
 
@@ -16,6 +19,22 @@ export const academicProfiles = [
 
 export const affiliations = [
   ['GAIPS', links.gaips], ['INESC-ID', links.inesc], ['Instituto Superior Técnico', links.tecnico], ['Rezolve AI', links.rezolve]
+] as const;
+
+export const personalProfiles = [
+  ['Instagram', links.instagram], ['Goodreads', links.goodreads], ['Curti Zona FC', links.curtiZona]
+] as const;
+
+export const currentlyReading = [
+  'Bambino a Roma',
+  'O Caçador de Elefantes Invisíveis',
+  'À Caça de Sombras'
+] as const;
+
+export const personalUpdates = [
+  { label: 'Reading now', entries: [...currentlyReading] },
+  { label: 'Playing', entries: ['Pokémon FireRed, Sword & Brilliant Diamond', 'Hogwarts Legacy and Assassin’s Creed: The Rebel Collection'] },
+  { label: 'Watching', entries: ['The Gentlemen, Only Murders in the Building, Reacher, and a Game of Thrones rewatch', 'Recent films I enjoyed include Odisseia and Obsession'] }
 ] as const;
 
 export const emails = ['diogo.s.carvalho@tecnico.ulisboa.pt', 'diogocarvalho@rezolve.com', 'carvalhomm88@gmail.com'];

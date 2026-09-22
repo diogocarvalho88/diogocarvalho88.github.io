@@ -23,6 +23,29 @@
 .focus-grid h3{font-size:clamp(24px,2.6vw,39px);line-height:1.2;letter-spacing:-.03em;font-weight:500;max-width:580px;margin:32px 0 18px}
 .focus-grid p{max-width:610px;color:var(--muted);font-size:14px}
 .focus-grid a{display:inline-block;margin-top:22px;font:500 10px var(--mono);text-transform:uppercase;text-underline-offset:4px}
+.activity{border-top:1px solid var(--ink)}
+.activity-list{border-top:1px solid var(--line)}
+.activity-item{display:grid;grid-template-columns:minmax(150px,.45fr) minmax(280px,1.35fr) minmax(220px,.8fr) auto;gap:35px;align-items:center;padding:27px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.activity-item:hover{background:rgba(255,255,255,.34)}
+.activity-item time,.activity-item span{font:400 10px var(--mono);text-transform:uppercase;color:#a27800}
+.activity-item h3{font-size:21px;line-height:1.25;margin:5px 0 0}
+.activity-item p{font-size:13px;color:var(--muted);margin:0}
+.activity-item strong{font:400 13px var(--mono)}
+.personal{border-top:1px solid var(--ink)}
+.personal-heading{align-items:end}
+.personal-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:flex-end}
+.personal-links a{font:500 10px var(--mono);text-transform:uppercase;text-underline-offset:4px}
+.personal-intro{max-width:900px;font-size:18px;line-height:1.65;color:var(--muted);margin:-10px 0 55px}
+.personal-updates{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.personal-updates article{background:var(--paper);padding:32px;min-height:260px}
+.personal-updates span{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#a27800}
+.personal-updates ul{list-style:none;margin:30px 0 0;padding:0}
+.personal-updates li{font-family:var(--serif);font-size:18px;line-height:1.35;padding:13px 0;border-top:1px solid var(--line)}
+.personal-updates li:last-child{border-bottom:1px solid var(--line)}
+.personal-notes{display:grid;grid-template-columns:repeat(2,1fr);gap:0 55px;padding-top:35px}
+.personal-notes p{display:grid;grid-template-columns:100px 1fr;gap:18px;margin:0;padding:18px 0;border-top:1px solid var(--line)}
+.personal-notes strong{font:500 10px var(--mono);text-transform:uppercase;color:#a27800}
+.personal-notes span{font-size:13px;color:var(--muted)}
 .cv-hero>p:not(.eyebrow){font-size:19px;color:var(--muted);max-width:700px}
 .cv-hero .hero-actions .button{margin-top:0}
 
@@ -30,6 +53,7 @@
   .focus-heading{grid-template-columns:1fr;gap:30px}
   .focus-grid article{padding-right:35px}
   .focus-grid article+article{padding-left:35px}
+  .activity-item{grid-template-columns:130px 1.4fr 1fr auto;gap:22px}
 }
 
 @media(max-width:580px){
@@ -38,5 +62,13 @@
   .focus-grid article,.focus-grid article+article{padding:32px 0 40px;min-height:0;border-left:0}
   .focus-grid article+article{border-top:1px solid var(--line)}
   .focus-grid h3{margin-top:18px}
-  .featured .section-heading{flex-direction:column}
+  .featured .section-heading,.activity .section-heading{flex-direction:column}
+  .activity-item{position:relative;grid-template-columns:1fr;gap:7px;padding-right:28px}
+  .activity-item h3{font-size:19px}
+  .activity-item strong{position:absolute;right:2px;top:28px}
+  .personal-heading{flex-direction:column}
+  .personal-links{justify-content:flex-start}
+  .personal-intro{margin-top:0;font-size:16px}
+  .personal-updates,.personal-notes{grid-template-columns:1fr}
+  .personal-updates article{min-height:0;padding:28px}
 }
