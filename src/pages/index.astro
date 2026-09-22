@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import { getCollection } from 'astro:content';
+import { links, themes } from '../data/site';
+const pubs = (await getCollection('publications')).filter(p => p.data.featured).sort((a,b) => b.data.year-a.data.year).slice(0,4);
+const events = (await getCollection('events')).sort((a,b) => b.data.date.localeCompare(a.data.date));
+---
+<BaseLayout title="Diogo S. Carvalho — AI Researcher" description="AI researcher working on learning, planning, decision-making, hierarchical reinforcement learning, and reliable applied AI.">
+  <section class="hero shell">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span>AI researcher · Lisbon, Portugal</p>
+      <h1>Learning,<br/><em>planning</em> &<br/>decision making.</h1>
+      <p class="lede">I study how intelligent systems learn, plan, and make decisions—especially through hierarchical structures, abstraction, reusable competence, and the principled allocation of computation.</p>
+      <div class="hero-actions"><a class="button primary" href="/research/">Explore my research <span>↗</span></a><a class="button text" href="/cv/">View CV <span>→</span></a></div>
+    </div>
+    <div class="hero-visual">
+      <picture><source type="image/avif" srcset="/images/portrait-diogo-carvalho-800.avif 800w, /images/portrait-diogo-carvalho-1200.avif 1200w"/><source type="image/webp" srcset="/images/portrait-diogo-carvalho-800.webp 800w, /images/portrait-diogo-carvalho-1200.webp 1200w"/><img src="/images/portrait-diogo-carvalho-1200.jpg" width="1200" height="1376" alt="Portrait of Diogo S. Carvalho" fetchpriority="high"/></picture>
+      <div class="trajectory" aria-hidden="true"><span></span><span></span><span></span><span></span><svg viewBox="0 0 300 100"><path d="M8 82 C70 80 58 20 125 28 S220 96 292 15"/></svg></div>
+      <div class="role-card"><span>Now</span><strong>AI/ML Engineer &<br/>Research Scientist</strong><small>Rezolve AI</small></div>
+    </div>
+    <div class="hero-note"><span>PhD</span><p>Awaiting defense<br/>Instituto Superior Técnico</p></div>
+  </section>
+
+  <section class="statement shell"><p class="section-num">01 / Research agenda</p><h2>Building intelligence that can <em>organize experience</em>, reuse what it learns, and act reliably in a changing world.</h2></section>
+  <section class="themes shell">{themes.map(theme => <article><span>{theme.n}</span><h3>{theme.title}</h3><p>{theme.text}</p></article>)}</section>
+
+  <section class="featured shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Recent research</h2></div><a href="/research/">All publications →</a></div>
+    <div class="publication-list">{pubs.map((pub,index) => <PublicationCard pub={pub} index={index}/>)}</div>
+  </section>
+
+  <section class="events shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">In the room</p><h2>Talks & presentations</h2></div></div>
+    <div class="event-grid">{events.map(event => <a href={event.data.url} target="_blank" rel="noreferrer"><time datetime={event.data.date}>{new Date(event.data.date+'T12:00:00').toLocaleDateString('en-GB',{month:'short',year:'numeric'})}</time><h3>{event.data.title}</h3><p>{event.data.venue}</p><span>↗</span></a>)}</div>
+  </section>
+
+  <section class="teaching shell section-space"><div><p class="eyebrow">Teaching</p><h2>From principles<br/>to practice.</h2></div><div class="course-list"><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/ADI36/2024-2025/2-semestre/pagina-inicial"><span>Instituto Superior Técnico</span><strong>Planning, Learning and Decision Making</strong><em>Course ↗</em></a><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/AASMA36/2024-2025/2-semestre"><span>Instituto Superior Técnico</span><strong>Autonomous Agents and Multi-Agent Systems</strong><em>Course ↗</em></a></div></section>
+
+  <section class="affiliations shell"><p class="eyebrow">Affiliations & profiles</p><div>{[['Rezolve AI',links.rezolve],['Técnico',links.tecnico],['INESC-ID',links.inesc],['GAIPS',links.gaips],['Google Scholar',links.scholar],['GitHub',links.github],['LinkedIn',links.linkedin],['OpenReview',links.openreview],['AIhub',links.aihub]].map(([label,url]) => <a href={url}>{label} <span>↗</span></a>)}</div></section>
+</BaseLayout>

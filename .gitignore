@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Private source material and offline archives
+_archive/talks/kth-2024/*
+!_archive/talks/kth-2024/README.md
+!_archive/talks/kth-2024/manifest.example.json
+id_diogo.pdf
+20191209_TECNICO LISBOA_BSc.pdf
+20191209_TECNICO LISBOA_MSc.pdf
+iniciais.jpg
+diogo_cv.jpg
+diogo_cv.pdf
+1658850126093.jpg
+foto.png
+WhatsApp Image*.jpeg

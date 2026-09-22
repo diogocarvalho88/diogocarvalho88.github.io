@@ -1,0 +1,18 @@
+---
+const { pub, index, detailed = false } = Astro.props;
+const d = pub.data;
+const links = [['Paper', d.doi], ['PDF', d.pdf], ['Code', d.code], ['Project', d.project]].filter(([,url]) => url);
+---
+<article class:list={['publication', { detailed }]} data-status={d.status}>
+  <div class="pub-index">{String(index + 1).padStart(2, '0')}</div>
+  <div class="pub-body">
+    <div class="pub-meta"><span>{d.year}</span><span>{d.status}</span>{d.award && <span class="award">◆ {d.award}</span>}</div>
+    <h3>{d.title}</h3>
+    <p class="authors">{d.authors.join(' · ')}</p><p class="venue">{d.venue}</p>
+    {detailed && d.abstract && <p class="abstract">{d.abstract}</p>}
+    <div class="pub-links">
+      {links.map(([label,url]) => <a href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
+      <button class="bibtex-button" data-bibtex={d.bibtex}>BibTeX</button>
+    </div>
+  </div>
+</article>

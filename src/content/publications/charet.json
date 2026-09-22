@@ -1,0 +1,8 @@
+{
+  "title": "CHARET: Character-centered Approach to Emotion Tracking in Stories",
+  "authors": ["Diogo S. Carvalho", "Joana Campos", "Manuel Guimarães", "Ana Antunes", "João Dias", "Pedro A. Santos"],
+  "venue": "20th International Conference on Autonomous Agents and Multiagent Systems (AAMAS)", "year": 2021, "status": "conference", "topics": ["Multi-Agent Systems", "Natural Language Processing"], "featured": false,
+  "pdf": "https://www.ifaamas.org/Proceedings/aamas2021/pdfs/p1469.pdf", "project": "https://arxiv.org/abs/2102.07537",
+  "abstract": "A character role-labelling approach that tracks emotional state and accounts for the semantics of emotions in stories.",
+  "bibtex": "@inproceedings{carvalho2021charet, title={CHARET: Character-centered Approach to Emotion Tracking in Stories}, author={Carvalho, Diogo S. and Campos, Joana and Guimarães, Manuel and Antunes, Ana and Dias, João and Santos, Pedro A.}, booktitle={Proceedings of the 20th International Conference on Autonomous Agents and Multiagent Systems}, pages={1469--1471}, year={2021}}"
+}

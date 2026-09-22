@@ -1,0 +1,5 @@
+{
+  "title": "The Impact of Data Distribution on Q-Learning with Function Approximation", "authors": ["Pedro P. Santos", "Diogo S. Carvalho", "Alberto Sardinha", "Francisco S. Melo"],
+  "venue": "Machine Learning", "year": 2024, "status": "journal", "topics": ["Reinforcement Learning", "Theory"], "featured": false,
+  "doi": "https://doi.org/10.1007/s10994-024-06564-5", "bibtex": "@article{santos2024impact, title={The Impact of Data Distribution on Q-Learning with Function Approximation}, author={Santos, Pedro P. and Carvalho, Diogo S. and Sardinha, Alberto and Melo, Francisco S.}, journal={Machine Learning}, volume={113}, number={9}, year={2024}, doi={10.1007/s10994-024-06564-5}}"
+}

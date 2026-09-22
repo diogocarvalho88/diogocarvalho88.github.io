@@ -1,0 +1,9 @@
+{
+  "title": "Hierarchical Reinforcement Learning",
+  "speaker": "Diogo S. Carvalho",
+  "host": "KTH Royal Institute of Technology",
+  "sourceUrl": "https://play.kth.se/media/%5BFDD3359+VT24+Reinforcement+Learning%2C+Spring+2024%5D+Diogo+S.+Carvalho+-+%22Hierarchical+Reinforcement+Learning%22/0_c32f3vhl",
+  "retrievedAt": "YYYY-MM-DD",
+  "rights": "Unconfirmed; private backup only",
+  "files": [{ "path": "recording.mp4", "sha256": "ADD_CHECKSUM" }, { "path": "captions.vtt", "sha256": "ADD_CHECKSUM" }, { "path": "thumbnail.jpg", "sha256": "ADD_CHECKSUM" }]
+}

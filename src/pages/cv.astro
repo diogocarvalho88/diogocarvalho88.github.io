@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const roles = [
+  { years:'Present', title:'AI/ML Engineer & Research Scientist', org:'Rezolve AI', text:'Research and engineering for reliable conversational and agentic commerce.' },
+  { years:'2020—Present', title:'PhD Candidate, Computer Science & Engineering', org:'Instituto Superior Técnico · INESC-ID · GAIPS', text:'Research on reinforcement learning, hierarchical structures, function approximation, and non-stationarity. Awaiting defense.' },
+  { years:'2021', title:'Machine Learning Scientist Intern', org:'Zebra Technologies', text:'Hierarchical and multi-agent reinforcement learning for warehouse environments.' },
+  { years:'2020—2022', title:'Teaching Assistant', org:'Instituto Superior Técnico', text:'Planning, Learning and Decision Making.' },
+  { years:'2020—2021', title:'Junior Researcher & Lab Manager', org:'GAIPS, INESC-ID', text:'Research in natural language processing; managed research infrastructure.' }
+];
+---
+<BaseLayout title="CV — Diogo S. Carvalho" description="Experience, education, awards, and downloadable curriculum vitae of AI researcher Diogo S. Carvalho.">
+  <section class="page-hero cv-hero shell"><p class="eyebrow">Curriculum vitae</p><h1>Theory-minded.<br/><em>Application-aware.</em></h1><p>A researcher and engineer working across reinforcement learning foundations, multi-agent systems, and dependable AI products.</p><a class="button primary" href="mailto:diogo.s.carvalho@tecnico.ulisboa.pt?subject=CV%20request">Request CV · Email ↗</a><small>Updated public PDF coming soon</small></section>
+  <section class="timeline shell section-space"><div class="timeline-title"><p class="eyebrow">Experience</p><h2>Work & research</h2></div><div>{roles.map(role => <article><time>{role.years}</time><div><h3>{role.title}</h3><strong>{role.org}</strong><p>{role.text}</p></div></article>)}</div></section>
+  <section class="cv-grid shell section-space"><div><p class="eyebrow">Education</p><article><span>2020—Present</span><h3>PhD, Computer Science & Engineering</h3><p>Instituto Superior Técnico, Universidade de Lisboa · awaiting defense</p></article><article><span>2017—2019</span><h3>MSc, Applied Mathematics & Computation</h3><p>Instituto Superior Técnico, Universidade de Lisboa</p></article><article><span>2014—2017</span><h3>BSc, Applied Mathematics & Computation</h3><p>Instituto Superior Técnico, Universidade de Lisboa</p></article></div><div><p class="eyebrow">Recognition</p><article class="award-card"><span>2023</span><h3>Outstanding Paper Award</h3><p>26th European Conference on Artificial Intelligence, for “Theoretical Remarks on Feudal Hierarchies and Reinforcement Learning.”</p><a href="https://ecai2023.eu/bpa">Official record ↗</a></article></div></section>
+</BaseLayout>

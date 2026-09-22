@@ -1,0 +1,5 @@
+{
+  "title": "A New Convergent Variant of Q-Learning with Linear Function Approximation", "authors": ["Diogo S. Carvalho", "Pedro A. Santos", "Francisco S. Melo"],
+  "venue": "Advances in Neural Information Processing Systems (NeurIPS)", "year": 2020, "status": "conference", "topics": ["Reinforcement Learning", "Theory"], "featured": false,
+  "project": "https://proceedings.neurips.cc/paper/2020/hash/e6d8545daa42d5ced125a4bf747b3688-Abstract.html", "bibtex": "@inproceedings{carvalho2020convergent, title={A New Convergent Variant of Q-Learning with Linear Function Approximation}, author={Carvalho, Diogo S. and Santos, Pedro A. and Melo, Francisco S.}, booktitle={Advances in Neural Information Processing Systems}, year={2020}}"
+}

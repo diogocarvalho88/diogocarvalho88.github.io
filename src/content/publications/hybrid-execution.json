@@ -1,0 +1,8 @@
+{
+  "title": "Centralized Training with Hybrid Execution in Multi-Agent Reinforcement Learning via Predictive Observation Imputation",
+  "authors": ["Pedro P. Santos", "Diogo S. Carvalho", "Miguel Vasco", "Alberto Sardinha", "Pedro A. Santos", "Ana Paiva", "Francisco S. Melo"],
+  "venue": "Artificial Intelligence; extended abstract at AAMAS 2024 and abstract reprint at AAAI 2026", "year": 2025, "status": "journal", "topics": ["Multi-Agent Systems", "Reinforcement Learning"], "featured": false,
+  "doi": "https://doi.org/10.1016/j.artint.2025.104404", "code": "https://github.com/PPSantos/hybrid-marl",
+  "abstract": "Multi-agent policies use predictive observation imputation to adapt to arbitrary communication levels at execution time.",
+  "bibtex": "@article{santos2025hybrid, title={Centralized Training with Hybrid Execution in Multi-Agent Reinforcement Learning via Predictive Observation Imputation}, author={Santos, Pedro P. and Carvalho, Diogo S. and Vasco, Miguel and Sardinha, Alberto and Santos, Pedro A. and Paiva, Ana and Melo, Francisco S.}, journal={Artificial Intelligence}, volume={348}, pages={104404}, year={2025}, doi={10.1016/j.artint.2025.104404}}"
+}

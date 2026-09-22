@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; image?: string; }
+const { title, description, image = '/images/portrait-diogo-carvalho-1200.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Diogo S. Carvalho', url: Astro.site,
+  image: new URL(image, Astro.site), jobTitle: ['AI Researcher', 'AI/ML Engineer', 'Research Scientist'],
+  worksFor: { '@type': 'Organization', name: 'Rezolve AI', url: 'https://rezolve.com/' },
+  affiliation: [
+    { '@type': 'Organization', name: 'Instituto Superior Técnico' },
+    { '@type': 'Organization', name: 'INESC-ID' }, { '@type': 'Organization', name: 'GAIPS' }
+  ],
+  knowsAbout: ['Reinforcement learning', 'Multi-agent systems', 'Planning', 'Decision-making', 'Artificial intelligence'],
+  sameAs: ['https://github.com/diogocarvalho88','https://linkedin.com/in/diogosscarvalho','https://scholar.google.com/citations?user=KJdkaCMAAAAJ&hl=en','https://openreview.net/profile?id=~Diogo_S._Carvalho1','https://gaips.inesc-id.pt/team/diogo-carvalho/']
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" /><meta property="og:title" content={title} />
+    <meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site)} /><meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Diogo S. Carvalho, home"><span>DSC</span><span>Diogo S. Carvalho<small>AI research · Lisbon</small></span></a>
+      <button class="menu-button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Home</a>
+        <a href="/research/" aria-current={Astro.url.pathname.startsWith('/research') ? 'page' : undefined}>Research</a>
+        <a href="/cv/" aria-current={Astro.url.pathname.startsWith('/cv') ? 'page' : undefined}>CV</a>
+        <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer id="contact" class="footer shell">
+      <div><p class="eyebrow">Contact</p><h2>Good questions<br/>start conversations.</h2></div>
+      <div class="contact-list">
+        <p>Research & teaching</p><a href="mailto:diogo.s.carvalho@tecnico.ulisboa.pt">diogo.s.carvalho@tecnico.ulisboa.pt</a><button class="copy-email" data-copy="diogo.s.carvalho@tecnico.ulisboa.pt" aria-label="Copy research and teaching email">Copy</button>
+        <p>Industry</p><a href="mailto:diogocarvalho@rezolve.com">diogocarvalho@rezolve.com</a><button class="copy-email" data-copy="diogocarvalho@rezolve.com" aria-label="Copy industry email">Copy</button>
+        <p>General</p><a href="mailto:carvalhomm88@gmail.com">carvalhomm88@gmail.com</a><button class="copy-email" data-copy="carvalhomm88@gmail.com" aria-label="Copy general email">Copy</button>
+      </div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Diogo S. Carvalho</span><span>Built for clarity. No cookies, no tracking.</span><a href="#main">Back to top ↑</a></div>
+    </footer>
+    <script>
+      const menu = document.querySelector<HTMLButtonElement>('.menu-button');
+      const nav = document.querySelector<HTMLElement>('#site-nav');
+      menu?.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') === 'true'; menu.setAttribute('aria-expanded', String(!open)); nav?.toggleAttribute('data-open', !open); });
+      document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach(button => button.addEventListener('click', async () => { await navigator.clipboard.writeText(button.dataset.copy ?? ''); const old = button.textContent; button.textContent = 'Copied'; setTimeout(() => button.textContent = old, 1600); }));
+    </script>
+  </body>
+</html>

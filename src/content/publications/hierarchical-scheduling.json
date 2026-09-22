@@ -1,0 +1,5 @@
+{
+  "title": "Hierarchical Scheduling and Execution of Tasks in Multiagent Environments", "authors": ["Diogo S. Carvalho", "Pedro P. Santos", "Francisco S. Melo"],
+  "venue": "EPIA Conference on Artificial Intelligence", "year": 2022, "status": "conference", "topics": ["Multi-Agent Systems", "Hierarchies"], "featured": false,
+  "bibtex": "@inproceedings{carvalho2022hierarchical, title={Hierarchical Scheduling and Execution of Tasks in Multiagent Environments}, author={Carvalho, Diogo S. and Santos, Pedro P. and Melo, Francisco S.}, booktitle={EPIA Conference on Artificial Intelligence}, year={2022}}"
+}

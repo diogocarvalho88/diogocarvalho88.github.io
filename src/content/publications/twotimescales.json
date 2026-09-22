@@ -1,0 +1,6 @@
+{
+  "title": "Regularization and Two Time Scales for Convergence of Reinforcement Learning", "authors": ["Diogo S. Carvalho", "Pedro A. Santos", "Francisco S. Melo"],
+  "venue": "Applied Mathematics & Optimization", "year": 2025, "status": "journal", "topics": ["Reinforcement Learning", "Theory"], "featured": true,
+  "doi": "https://doi.org/10.1007/s00245-025-10304-z", "abstract": "Convergence results for reinforcement learning through regularization and two-time-scale stochastic approximation.",
+  "bibtex": "@article{carvalho2025regularization, title={Regularization and Two Time Scales for Convergence of Reinforcement Learning}, author={Carvalho, Diogo S. and Santos, Pedro A. and Melo, Francisco S.}, journal={Applied Mathematics and Optimization}, volume={92}, number={2}, year={2025}, doi={10.1007/s00245-025-10304-z}}"
+}

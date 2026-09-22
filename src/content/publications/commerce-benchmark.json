@@ -1,0 +1,8 @@
+{
+  "title": "Benchmarking Models for Conversational E-Commerce: A Reproducible Evaluation Framework",
+  "authors": ["Yuri Vorontsov", "Diogo S. Carvalho", "Anastasia Vorontsov", "Anna Platonova", "Vladimir Gorovoy", "Ilya Briskin", "Felix Tseitlin", "Senka Krivic", "Salman Ahmad"],
+  "venue": "GenAIECommerce Workshop at ACM RecSys", "year": 2026, "status": "workshop", "topics": ["Applied AI", "Evaluation"], "featured": true,
+  "pdf": "https://genai-ecommerce.github.io/assets/papers/GenAIECommerce2026/recsys2026-workshops_paper_99.pdf", "code": "https://github.com/rezolved/conversational-commerce-benchmark-framework", "project": "https://diogocarvalho88.github.io/conversational-commerce-benchmark-framework/",
+  "abstract": "A reproducible framework for benchmarking language models as multi-turn shopping agents across search, clarification, recommendation, and add-to-cart.",
+  "bibtex": "@inproceedings{vorontsov2026benchmarking, title={Benchmarking Models for Conversational E-Commerce: A Reproducible Evaluation Framework}, author={Vorontsov, Yuri and Carvalho, Diogo S. and Vorontsov, Anastasia and others}, booktitle={GenAIECommerce Workshop at ACM RecSys}, year={2026}}"
+}

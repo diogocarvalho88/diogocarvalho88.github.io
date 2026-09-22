@@ -1,0 +1,8 @@
+{
+  "title": "User-State Verification in Conversational Commerce: Detecting Journey Hallucinations via Trace Invariants",
+  "authors": ["Diogo Carvalho", "Senka Krivic", "Timothy Tang", "Salman Ahmad"],
+  "venue": "34th ACM Conference on User Modeling, Adaptation and Personalization (UMAP)", "year": 2026, "status": "conference", "topics": ["Applied AI", "Evaluation"], "featured": true,
+  "doi": "https://doi.org/10.1145/3774935.3812704", "pdf": "https://rezolve.com/wp-content/uploads/2026/05/User-State-Verification-in-Conversational-Commerce-09-jun-26.pdf",
+  "abstract": "A lightweight verification framework that reconstructs transactional user state from execution logs and checks agent claims against deterministic invariants.",
+  "bibtex": "@inproceedings{carvalho2026user, title={User-State Verification in Conversational Commerce: Detecting Journey Hallucinations via Trace Invariants}, author={Carvalho, Diogo and Krivic, Senka and Tang, Timothy and Ahmad, Salman}, booktitle={Proceedings of the 34th ACM Conference on User Modeling, Adaptation and Personalization}, year={2026}, doi={10.1145/3774935.3812704}}"
+}
