@@ -25,9 +25,9 @@ const articleLd = pubs.map(({ data: p }) => ({
   isPartOf: { '@type': 'Periodical', name: p.venue }, sameAs: p.doi ?? p.project ?? p.pdf
 }));
 ---
-<BaseLayout title="Research — Diogo S. Carvalho" description="Research and publications by Diogo S. Carvalho in reinforcement learning, planning, multi-agent systems, and reliable applied AI.">
+<BaseLayout title="Reinforcement Learning Research — Diogo S. Carvalho" description="Publications by Diogo S. Carvalho on reinforcement learning convergence, hierarchical decision-making, planning, multi-agent systems, and agent evaluation.">
   <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
-  <section class="page-hero shell"><p class="eyebrow">Research</p><h1>How should intelligent systems <em>structure what they learn?</em></h1><p>My work connects mathematical foundations of reinforcement learning with the design and evaluation of agents that must operate reliably in the world.</p></section>
+  <section class="page-hero shell"><p class="eyebrow">Research</p><h1>Reinforcement learning across <em>timescales and levels of abstraction.</em></h1><p>My work studies convergence, hierarchy, temporal abstraction, planning, and multi-agent coordination—from mathematical analysis to the evaluation of deployed agentic systems.</p></section>
   <section class="research-map shell">{themes.map(t => <article><span>{t.n}</span><h2>{t.title}</h2><p>{t.text}</p></article>)}</section>
   <div class="shell section-space profiles-section"><ProfileLinks /></div>
   <section class="all-pubs shell section-space">

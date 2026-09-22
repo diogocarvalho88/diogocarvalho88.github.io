@@ -21,8 +21,8 @@ export const affiliations = [
 export const emails = ['diogo.s.carvalho@tecnico.ulisboa.pt', 'diogocarvalho@rezolve.com', 'carvalhomm88@gmail.com'];
 
 export const themes = [
-  { n: '01', title: 'Learning under uncertainty', text: 'How can agents keep learning when their data, representations, or environment change over time?' },
-  { n: '02', title: 'Hierarchy & multi-agent intelligence', text: 'How do structure, delegation, and coordination make long-horizon competence possible?' },
-  { n: '03', title: 'Planning, reasoning & abstraction', text: 'How can systems form reusable skills and allocate computation to the decisions that matter?' },
-  { n: '04', title: 'Reliable applied AI', text: 'How should we evaluate and verify agents operating in consequential, real-world workflows?' }
+  { n: '01', title: 'Convergent reinforcement learning', text: 'When do value-based methods with function approximation converge as representations or data distributions change?' },
+  { n: '02', title: 'Hierarchical reinforcement learning', text: 'How should agents learn, reuse, and terminate temporally extended skills across long-horizon tasks?' },
+  { n: '03', title: 'Adaptive planning & computation', text: 'When should an agent plan, act, reuse a plan, or allocate more reasoning to a decision?' },
+  { n: '04', title: 'Reliable agentic systems', text: 'How can trace-based evaluations detect state, coordination, and execution failures in conversational and commerce agents?' }
 ];

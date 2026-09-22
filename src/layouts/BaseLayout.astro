@@ -6,7 +6,7 @@ const { title, description, image = '/images/portrait-diogo-carvalho-1200.jpg' }
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const jsonLd = {
   '@context': 'https://schema.org', '@type': 'Person', name: 'Diogo S. Carvalho', url: Astro.site,
-  image: new URL(image, Astro.site), jobTitle: ['AI Researcher', 'AI/ML Engineer', 'Research Scientist'],
+  image: new URL(image, Astro.site), jobTitle: ['Research Scientist', 'AI/ML Engineer', 'AI Researcher'],
   worksFor: { '@type': 'Organization', name: 'Rezolve AI', url: 'https://rezolve.com/' },
   affiliation: [
     { '@type': 'Organization', name: 'Instituto Superior Técnico' },
@@ -24,11 +24,14 @@ const jsonLd = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Diogo S. Carvalho" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:type" content="website" /><meta property="og:title" content={title} />
+    <meta property="og:type" content="profile" /><meta property="og:site_name" content="Diogo S. Carvalho" /><meta property="og:title" content={title} />
     <meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(image, Astro.site)} /><meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={new URL(image, Astro.site)} /><meta property="profile:first_name" content="Diogo" /><meta property="profile:last_name" content="Carvalho" />
+    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={new URL(image, Astro.site)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
@@ -45,7 +48,7 @@ const jsonLd = {
     </header>
     <main id="main"><slot /></main>
     <footer id="contact" class="footer shell">
-      <div><p class="eyebrow">Contact</p><h2>Good questions<br/>start conversations.</h2></div>
+      <div><p class="eyebrow">Contact</p><h2>Good questions<br/> start conversations.</h2></div>
       <div class="contact-list">
         <p>Research & teaching</p><a href="mailto:diogo.s.carvalho@tecnico.ulisboa.pt">diogo.s.carvalho@tecnico.ulisboa.pt</a><button class="copy-email" data-copy="diogo.s.carvalho@tecnico.ulisboa.pt" aria-label="Copy research and teaching email">Copy</button>
         <p>Industry</p><a href="mailto:diogocarvalho@rezolve.com">diogocarvalho@rezolve.com</a><button class="copy-email" data-copy="diogocarvalho@rezolve.com" aria-label="Copy industry email">Copy</button>
