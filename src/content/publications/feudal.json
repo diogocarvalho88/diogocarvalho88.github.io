@@ -1,6 +1,6 @@
 {
   "title": "Theoretical Remarks on Feudal Hierarchies and Reinforcement Learning", "authors": ["Diogo S. Carvalho", "Francisco S. Melo", "Pedro A. Santos"],
   "venue": "26th European Conference on Artificial Intelligence (ECAI)", "year": 2023, "status": "conference", "topics": ["Reinforcement Learning", "Hierarchies"], "featured": true,
-  "doi": "https://doi.org/10.3233/FAIA230290", "award": "Outstanding Paper Award — ECAI 2023", "abstract": "A formal analysis of feudal reinforcement-learning hierarchies and the guarantees they can provide.",
+  "doi": "https://doi.org/10.3233/FAIA230290", "materials": ["ecai-feudal-poster", "ecai-feudal-slides", "rldm-feudal-poster"], "award": "Outstanding Paper Award — ECAI 2023", "abstract": "A formal analysis of feudal reinforcement-learning hierarchies and the guarantees they can provide.",
   "bibtex": "@inproceedings{carvalho2023feudal, title={Theoretical Remarks on Feudal Hierarchies and Reinforcement Learning}, author={Carvalho, Diogo S. and Melo, Francisco S. and Santos, Pedro A.}, booktitle={ECAI 2023}, year={2023}, doi={10.3233/FAIA230290}}"
 }

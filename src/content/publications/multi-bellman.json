@@ -1,6 +1,6 @@
 {
   "title": "Multi-Bellman Operator for Convergence of Q-Learning with Linear Function Approximation", "authors": ["Diogo S. Carvalho", "Pedro A. Santos", "Francisco S. Melo"],
   "venue": "Transactions on Machine Learning Research; presented at ICLR 2026", "year": 2025, "status": "journal", "topics": ["Reinforcement Learning", "Theory"], "featured": true,
-  "doi": "https://openreview.net/forum?id=D2PjEPGXgh", "pdf": "https://openreview.net/pdf?id=D2PjEPGXgh", "abstract": "A convergence analysis for Q-learning with linear function approximation based on a multi-Bellman operator.",
+  "doi": "https://openreview.net/forum?id=D2PjEPGXgh", "pdf": "https://openreview.net/pdf?id=D2PjEPGXgh", "materials": ["multi-bellman-poster"], "abstract": "A convergence analysis for Q-learning with linear function approximation based on a multi-Bellman operator.",
   "bibtex": "@article{carvalho2025multibellman, title={Multi-Bellman Operator for Convergence of Q-Learning with Linear Function Approximation}, author={Carvalho, Diogo S. and Santos, Pedro A. and Melo, Francisco S.}, journal={Transactions on Machine Learning Research}, year={2025}}"
 }

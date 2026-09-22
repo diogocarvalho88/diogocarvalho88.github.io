@@ -1,0 +1,8 @@
+{
+  "title": "Autoclave Loading Using Deep Reinforcement Learning",
+  "type": "slides", "year": 2025, "context": "EPIA 2025 presentation",
+  "description": "Conference slides on deep reinforcement learning for two-dimensional autoclave loading.",
+  "pdf": "/materials/autoclave-loading-deep-rl-epia-2025-slides.pdf", "pages": 53, "size": "581 KB",
+  "relatedPublication": "autoclave-loading",
+  "presentationVenues": [{"name": "EPIA 2025", "url": "https://epia2025.ualg.pt/wp-content/uploads/2025/10/EPIA-2025-Conference-Program_f1.1.pdf"}]
+}

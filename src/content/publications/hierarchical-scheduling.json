@@ -1,5 +1,6 @@
 {
-  "title": "Hierarchical Scheduling and Execution of Tasks in Multiagent Environments", "authors": ["Diogo S. Carvalho", "Pedro P. Santos", "Francisco S. Melo"],
+  "title": "Hierarchically Structured Scheduling and Execution of Tasks in a Multi-Agent Environment", "authors": ["Diogo S. Carvalho", "Biswa Sengupta"],
   "venue": "EPIA Conference on Artificial Intelligence", "year": 2022, "status": "conference", "topics": ["Multi-Agent Systems", "Hierarchies"], "featured": false,
-  "bibtex": "@inproceedings{carvalho2022hierarchical, title={Hierarchical Scheduling and Execution of Tasks in Multiagent Environments}, author={Carvalho, Diogo S. and Santos, Pedro P. and Melo, Francisco S.}, booktitle={EPIA Conference on Artificial Intelligence}, year={2022}}"
+  "doi": "https://doi.org/10.1007/978-3-031-16474-3_2", "project": "https://arxiv.org/abs/2203.03021",
+  "bibtex": "@inproceedings{carvalho2022hierarchically, title={Hierarchically Structured Scheduling and Execution of Tasks in a Multi-Agent Environment}, author={Carvalho, Diogo S. and Sengupta, Biswa}, booktitle={Progress in Artificial Intelligence}, year={2022}, doi={10.1007/978-3-031-16474-3_2}}"
 }

@@ -3,10 +3,20 @@ export const links = {
   linkedin: 'https://linkedin.com/in/diogosscarvalho',
   scholar: 'https://scholar.google.com/citations?user=KJdkaCMAAAAJ&hl=en',
   openreview: 'https://openreview.net/profile?id=~Diogo_S._Carvalho1',
+  orcid: 'https://orcid.org/0000-0003-3008-7322',
   gaips: 'https://gaips.inesc-id.pt/team/diogo-carvalho/',
   aihub: 'https://aihub.org/author/diogocarvalho/',
   inesc: 'https://www.inesc-id.pt/', tecnico: 'https://tecnico.ulisboa.pt/en/', rezolve: 'https://rezolve.com/'
 };
+
+export const academicProfiles = [
+  ['Google Scholar', links.scholar], ['OpenReview', links.openreview], ['ORCID', links.orcid],
+  ['GitHub', links.github], ['LinkedIn', links.linkedin], ['AIhub', links.aihub]
+] as const;
+
+export const affiliations = [
+  ['GAIPS', links.gaips], ['INESC-ID', links.inesc], ['Instituto Superior Técnico', links.tecnico], ['Rezolve AI', links.rezolve]
+] as const;
 
 export const emails = ['diogo.s.carvalho@tecnico.ulisboa.pt', 'diogocarvalho@rezolve.com', 'carvalhomm88@gmail.com'];
 

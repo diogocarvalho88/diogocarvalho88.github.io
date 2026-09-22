@@ -1,0 +1,7 @@
+{
+  "title": "Theoretical Remarks on Feudal Hierarchies and Reinforcement Learning",
+  "type": "poster", "year": 2023, "context": "ECAI 2023 poster",
+  "description": "Poster accompanying the ECAI 2023 outstanding-paper presentation.",
+  "pdf": "/materials/theoretical-remarks-feudal-hierarchies-ecai-2023-poster.pdf", "pages": 1, "size": "235 KB",
+  "relatedPublication": "feudal", "presentationVenues": [{"name": "ECAI 2023", "url": "https://ecai2023.eu/"}]
+}

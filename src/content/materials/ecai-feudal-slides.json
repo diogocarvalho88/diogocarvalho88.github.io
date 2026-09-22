@@ -1,0 +1,7 @@
+{
+  "title": "Theoretical Remarks on Feudal Hierarchies and Reinforcement Learning",
+  "type": "slides", "year": 2023, "context": "ECAI 2023 presentation",
+  "description": "Presentation slides for the formal analysis of learning in feudal reinforcement-learning hierarchies.",
+  "pdf": "/materials/theoretical-remarks-feudal-hierarchies-ecai-2023-slides.pdf", "pages": 38, "size": "192 KB",
+  "relatedPublication": "feudal", "presentationVenues": [{"name": "ECAI 2023", "url": "https://ecai2023.eu/"}]
+}

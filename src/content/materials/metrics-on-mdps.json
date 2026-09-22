@@ -1,0 +1,7 @@
+{
+  "title": "Metrics on Markov Decision Processes",
+  "type": "slides", "context": "GAIPS Reading Group · undated",
+  "description": "A research lecture on metrics for finite MDPs, approximate MDP homomorphisms, and policy transfer.",
+  "pdf": "/materials/metrics-on-mdps-slides.pdf", "pages": 27, "size": "241 KB",
+  "presentationVenues": [{"name": "GAIPS Reading Group"}]
+}

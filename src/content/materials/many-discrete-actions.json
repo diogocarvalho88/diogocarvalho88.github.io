@@ -1,0 +1,7 @@
+{
+  "title": "Reinforcement Learning with Many Discrete Actions",
+  "type": "slides", "date": "2022-02-22", "year": 2022, "context": "GAIPS Reinforcement Learning Reading Group",
+  "description": "Reading-group lecture on reinforcement learning methods for large discrete action spaces.",
+  "pdf": "/materials/reinforcement-learning-many-discrete-actions-slides.pdf", "pages": 42, "size": "266 KB",
+  "presentationVenues": [{"name": "GAIPS RL Reading Group"}]
+}

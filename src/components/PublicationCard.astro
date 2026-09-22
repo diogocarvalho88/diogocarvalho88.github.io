@@ -1,7 +1,16 @@
 ---
-const { pub, index, detailed = false } = Astro.props;
+import type { CollectionEntry } from 'astro:content';
+interface Props { pub: CollectionEntry<'publications'>; index: number; detailed?: boolean; materialIndex?: Map<string, CollectionEntry<'materials'>> }
+const { pub, index, detailed = false, materialIndex = new Map<string, CollectionEntry<'materials'>>() } = Astro.props;
 const d = pub.data;
 const links = [['Paper', d.doi], ['PDF', d.pdf], ['Code', d.code], ['Project', d.project]].filter(([,url]) => url);
+const isMaterial = (item: CollectionEntry<'materials'> | undefined): item is CollectionEntry<'materials'> => Boolean(item);
+const typeLabels: Record<CollectionEntry<'materials'>['data']['type'], string> = { slides: 'Slides', poster: 'Poster', document: 'Document', 'research-note': 'Research note' };
+const materialLinks = (d.materials ?? []).map(ref => materialIndex.get(ref.id)).filter(isMaterial).map(material => ({
+  label: typeLabels[material.data.type],
+  url: material.data.pdf,
+  title: material.data.title
+}));
 ---
 <article class:list={['publication', { detailed }]} data-status={d.status}>
   <div class="pub-index">{String(index + 1).padStart(2, '0')}</div>
@@ -12,6 +21,7 @@ const links = [['Paper', d.doi], ['PDF', d.pdf], ['Code', d.code], ['Project', d
     {detailed && d.abstract && <p class="abstract">{d.abstract}</p>}
     <div class="pub-links">
       {links.map(([label,url]) => <a href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
+      {materialLinks.map(item => <a href={item.url} target="_blank" rel="noreferrer" aria-label={`${item.label}: ${item.title} (opens PDF in a new tab)`}>{item.label} ↗</a>)}
       <button class="bibtex-button" data-bibtex={d.bibtex}>BibTeX</button>
     </div>
   </div>

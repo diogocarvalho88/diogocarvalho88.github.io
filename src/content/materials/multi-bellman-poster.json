@@ -1,0 +1,11 @@
+{
+  "title": "Multi-Bellman Operator for Convergence of Q-Learning",
+  "type": "poster", "year": 2026, "context": "Conference poster",
+  "description": "Poster overview of the multi-Bellman operator and the convergence of Q-learning with linear function approximation.",
+  "pdf": "/materials/multi-bellman-operator-poster.pdf", "pages": 1, "size": "451 KB",
+  "relatedPublication": "multi-bellman",
+  "presentationVenues": [
+    {"name": "ICLR 2026", "url": "https://openreview.net/forum?id=D2PjEPGXgh"},
+    {"name": "ELLIS Doctoral Symposium 2026", "url": "https://ellis.eu/news/bringing-the-ai-research-community-together-in-lisbon-ellis-doctoral-symposium-2026"}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Feudal Hierarchies and Reinforcement Learning",
+  "type": "poster", "year": 2022, "context": "RLDM 2022 poster",
+  "description": "The distinct poster presented at the 2022 Multidisciplinary Conference on Reinforcement Learning and Decision Making.",
+  "pdf": "/materials/feudal-hierarchies-rldm-2022-poster.pdf", "pages": 1, "size": "136 KB",
+  "relatedPublication": "feudal",
+  "presentationVenues": [{"name": "RLDM 2022", "url": "https://rldm.org/wp-content/uploads/2021/04/program.pdf"}]
+}

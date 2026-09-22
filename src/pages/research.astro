@@ -1,9 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationCard from '../components/PublicationCard.astro';
+import MaterialCard from '../components/MaterialCard.astro';
+import ProfileLinks from '../components/ProfileLinks.astro';
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { themes } from '../data/site';
 const pubs = (await getCollection('publications')).sort((a,b) => b.data.year-a.data.year || a.data.title.localeCompare(b.data.title));
+const materials = await getCollection('materials');
+const materialIndex = new Map(materials.map(item => [item.id, item]));
+const publicationMaterials = materials.filter(item => item.data.relatedPublication).sort((a,b) => (b.data.year ?? 0)-(a.data.year ?? 0));
+const milestoneIds = new Set(['phd-proposal-document','phd-proposal-slides','cover-time-options-note']);
+const milestoneMaterials = materials.filter(item => milestoneIds.has(item.id));
+const lectureMaterials = materials.filter(item => !item.data.relatedPublication && !milestoneIds.has(item.id)).sort((a,b) => (b.data.year ?? 0)-(a.data.year ?? 0));
+const events = (await getCollection('events')).sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? ''));
+const materialGroups: [string, CollectionEntry<'materials'>[]][] = [
+  ['Publication materials', publicationMaterials], ['Lectures & seminars', lectureMaterials], ['Research milestones', milestoneMaterials]
+];
+const isMaterial = (item: CollectionEntry<'materials'> | undefined): item is CollectionEntry<'materials'> => Boolean(item);
 const filters = ['all', ...new Set(pubs.map(p => p.data.status))];
 const articleLd = pubs.map(({ data: p }) => ({
   '@context': 'https://schema.org', '@type': 'ScholarlyArticle', headline: p.title,
@@ -15,10 +29,26 @@ const articleLd = pubs.map(({ data: p }) => ({
   <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <section class="page-hero shell"><p class="eyebrow">Research</p><h1>How should intelligent systems <em>structure what they learn?</em></h1><p>My work connects mathematical foundations of reinforcement learning with the design and evaluation of agents that must operate reliably in the world.</p></section>
   <section class="research-map shell">{themes.map(t => <article><span>{t.n}</span><h2>{t.title}</h2><p>{t.text}</p></article>)}</section>
+  <div class="shell section-space profiles-section"><ProfileLinks /></div>
   <section class="all-pubs shell section-space">
     <div class="section-heading"><div><p class="eyebrow">Publications</p><h2>Complete list</h2></div><p>{pubs.length} works · 2020—2026</p></div>
     <div class="filters" aria-label="Filter publications">{filters.map((filter,i) => <button data-filter={filter} aria-pressed={i===0 ? 'true':'false'}>{filter}</button>)}</div>
-    <div class="publication-list" id="publications">{pubs.map((pub,index) => <PublicationCard pub={pub} index={index} detailed />)}</div>
+    <div class="publication-list" id="publications">{pubs.map((pub,index) => <PublicationCard pub={pub} index={index} detailed materialIndex={materialIndex} />)}</div>
+  </section>
+  <section class="materials shell section-space" id="materials">
+    <div class="section-heading"><div><p class="eyebrow">Research materials</p><h2>Talks, posters & research notes</h2></div><p>Browser-friendly PDFs</p></div>
+    {materialGroups.map(([heading, items]) => <div class="material-group"><h3>{heading}</h3><div class="material-grid">{items.map(item => <MaterialCard material={item} />)}</div></div>)}
+  </section>
+  <section class="appearance-archive shell section-space">
+    <div class="section-heading"><div><p class="eyebrow">Appearances</p><h2>Talks & presentations archive</h2></div><p>{events.length} records</p></div>
+    <div class="archive-list">{events.map(event => {
+      const eventMaterials = event.data.materials.map(ref => materialIndex.get(ref.id)).filter(isMaterial);
+      const displayDate = event.data.dateLabel ?? (event.data.date ? new Date(`${event.data.date}T12:00:00`).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : 'Undated');
+      return <article><time datetime={event.data.date}>{displayDate}</time><div><span class="event-type">{event.data.type}</span><h3>{event.data.title}</h3><strong>{event.data.venue}</strong><p>{event.data.description}</p><div class="archive-links">
+        {event.data.officialUrl && <a href={event.data.officialUrl} target="_blank" rel="noreferrer" aria-label={`${event.data.title} official event page (opens in a new tab)`}>Official event ↗</a>}
+        {eventMaterials.map(material => <a href={material.data.pdf} target="_blank" rel="noreferrer" aria-label={`Open ${material.data.type}: ${material.data.title} (PDF)`}>{material.data.type === 'research-note' ? 'Research note' : material.data.type[0].toUpperCase()+material.data.type.slice(1)} ↗</a>)}
+      </div></div></article>;
+    })}</div>
   </section>
   <script>
     document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach(button => button.addEventListener('click', () => {

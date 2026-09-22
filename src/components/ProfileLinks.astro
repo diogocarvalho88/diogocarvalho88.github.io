@@ -1,0 +1,15 @@
+---
+import { academicProfiles, affiliations } from '../data/site';
+const { heading = 'Academic profiles', includeAffiliations = true } = Astro.props;
+const groups = includeAffiliations
+  ? [{ label: 'Profiles', items: academicProfiles }, { label: 'Affiliations', items: affiliations }]
+  : [{ label: 'Profiles', items: academicProfiles }];
+---
+<section class="profile-links" aria-labelledby="profile-links-heading">
+  <div><p class="eyebrow">Connect</p><h2 id="profile-links-heading">{heading}</h2></div>
+  <div class="profile-groups">
+    {groups.map(group => <div><p>{group.label}</p>{group.items.map(([label, url]) =>
+      <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label}<span aria-hidden="true">↗</span></a>
+    )}</div>)}
+  </div>
+</section>

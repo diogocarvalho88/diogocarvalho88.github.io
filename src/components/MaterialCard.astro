@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { material: CollectionEntry<'materials'> }
+const { material } = Astro.props;
+const m = material.data;
+const typeLabels: Record<typeof m.type, string> = { slides: 'Slides', poster: 'Poster', document: 'Document', 'research-note': 'Research note' };
+const typeLabel = typeLabels[m.type];
+const dateLabel = m.date
+  ? new Date(`${m.date}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  : m.year ? String(m.year) : 'Undated';
+---
+<article class="material-card">
+  <div class="material-meta"><span>{typeLabel}</span><span>{dateLabel}</span><span>{m.pages} {m.pages === 1 ? 'page' : 'pages'} · {m.size}</span></div>
+  <h3>{m.title}</h3><strong>{m.context}</strong><p>{m.description}</p>
+  {m.presentationVenues.length > 0 && <div class="venue-links">{m.presentationVenues.map(venue => venue.url
+    ? <a href={venue.url} target="_blank" rel="noreferrer" aria-label={`${venue.name} official page (opens in a new tab)`}>{venue.name} ↗</a>
+    : <span>{venue.name}</span>)}</div>}
+  <a class="material-open" href={m.pdf} target="_blank" rel="noreferrer" aria-label={`Open ${typeLabel}: ${m.title} (PDF, ${m.pages} pages)`}>Open {typeLabel} <span aria-hidden="true">↗</span></a>
+</article>
