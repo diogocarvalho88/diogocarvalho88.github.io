@@ -31,7 +31,10 @@ const excludedAuthors = new Set([
 ]);
 const coauthors = [...new Set(pubs.flatMap(pub => pub.data.authors))]
   .filter(name => !excludedAuthors.has(name))
-  .sort((a, b) => a.localeCompare(b))
+  .sort((a, b) => {
+    const surname = (name: string) => name.slice(name.lastIndexOf(' ') + 1);
+    return surname(a).localeCompare(surname(b)) || a.localeCompare(b);
+  })
   .map(name => ({ name, url: `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${name}"`)}` }));
 const articleLd = pubs.map(({ data: p }) => ({
   '@context': 'https://schema.org', '@type': 'ScholarlyArticle', headline: p.title,
