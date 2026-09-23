@@ -23,7 +23,11 @@ const advisors = [
   { name: 'Francisco S. Melo', role: 'PhD advisor', url: 'https://scholar.google.com/citations?hl=en&user=5AEeWU4AAAAJ' },
   { name: 'Pedro A. Santos', role: 'PhD advisor', url: 'https://scholar.google.com/citations?hl=en&user=G-KLR4MAAAAJ' }
 ];
-const excludedAuthors = new Set(['Diogo S. Carvalho', 'Diogo Carvalho', ...advisors.map(advisor => advisor.name)]);
+const excludedAuthors = new Set([
+  'Diogo S. Carvalho', 'Diogo Carvalho', ...advisors.map(advisor => advisor.name),
+  'Yuri Vorontsov', 'Anastasia Vorontsov', 'Anna Platonova', 'Vladimir Gorovoy',
+  'Ilya Briskin', 'Felix Tseitlin', 'Fabio A. Faria', 'Ana Paiva'
+]);
 const coauthors = [...new Set(pubs.flatMap(pub => pub.data.authors))]
   .filter(name => !excludedAuthors.has(name))
   .sort((a, b) => a.localeCompare(b))
@@ -45,7 +49,7 @@ const articleLd = pubs.map(({ data: p }) => ({
       {advisors.map(advisor => <a href={advisor.url} target="_blank" rel="noreferrer"><span>{advisor.role}</span><strong>{advisor.name}</strong><em>Google Scholar ↗</em></a>)}
     </div>
     <div class="coauthor-directory">
-      <p>Publication coauthors</p>
+      <p>Selected coauthors</p>
       <div>{coauthors.map(coauthor => <a href={coauthor.url} target="_blank" rel="noreferrer" aria-label={`Search Google Scholar for ${coauthor.name}`}>{coauthor.name}<span>↗</span></a>)}</div>
     </div>
   </section>
