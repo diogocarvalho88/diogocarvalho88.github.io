@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationCard from '../components/PublicationCard.astro';
 import { getCollection } from 'astro:content';
-import { academicProfiles, affiliations } from '../data/site';
 const allPubs = await getCollection('publications');
 const selectedIds = ['multi-bellman', 'nonstationary', 'feudal', 'qlearning'];
 const pubs = allPubs.filter(pub => selectedIds.includes(pub.id)).sort((a,b) => selectedIds.indexOf(a.id)-selectedIds.indexOf(b.id));
@@ -71,5 +70,4 @@ const news = [
     <div><p>I read, play games on Nintendo Switch, train, cook, and play Sunday football with Curti Zona FC. I keep a few current notes and links on a separate page.</p><a class="inline-link" href="/personal/">Personal notes →</a></div>
   </section>
 
-  <section class="affiliations shell"><p class="eyebrow">Affiliations & profiles</p><div>{[...affiliations, ...academicProfiles].map(([label,url]) => <a href={url} target="_blank" rel="noreferrer" aria-label={`${label} (opens in a new tab)`}>{label} <span aria-hidden="true">↗</span></a>)}</div></section>
 </BaseLayout>
