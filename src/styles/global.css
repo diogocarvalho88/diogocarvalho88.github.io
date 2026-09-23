@@ -84,3 +84,43 @@
   .personal-updates article{min-height:0;padding:28px}
   .personal-directory a,.personal-directory a:first-child{padding-left:0}
 }
+
+/* Keep editorial microcopy readable on large and high-density displays. */
+.wordmark small{font-size:11px}
+.site-header nav a{font-size:13px}
+.eyebrow,.section-num{font-size:13px;line-height:1.45;letter-spacing:.1em}
+.role-card span,.role-card small{font-size:11px}
+.hero-note>span{font-size:12px}
+.hero-note p{font-size:14px}
+.themes span,.research-map span{font-size:12px}
+.section-heading>a{font-size:12px}
+.pub-index{font-size:13px}
+.pub-meta{font-size:12px}
+.pub-links a,.pub-links button{font-size:12px}
+.event-grid time{font-size:12px}
+.course-list span,.course-list em{font-size:12px}
+.contact-list p{font-size:12px}
+.copy-email{font-size:12px}
+.footer-bottom{font-size:11px}
+.filters button{font-size:12px}
+.cv-hero small{font-size:12px}
+.timeline time,.cv-grid span{font-size:12px}
+.award-card a{font-size:12px}
+.footer-profiles>p{font-size:12px}
+.profile-groups>div>p{font-size:12px}
+.advisor-grid a>span,.coauthor-directory>p{font-size:12px}
+.advisor-grid em{font-size:11px}
+.coauthor-directory a span{font-size:12px}
+.material-meta{font-size:11px}
+.venue-links a,.venue-links span{font-size:11px}
+.material-open{font-size:12px}
+.archive-list time{font-size:12px}
+.event-type{font-size:11px}
+.archive-links a,.inline-link,.milestone-links a{font-size:12px}
+.milestone time{font-size:12px}
+.confidentiality-note{font-size:11px}
+.focus-grid span,.focus-grid a{font-size:12px}
+.activity-item time,.activity-item span{font-size:12px}
+.personal-updates span{font-size:12px}
+.personal-updates li small{font-size:12px}
+.personal-notes strong{font-size:12px}
