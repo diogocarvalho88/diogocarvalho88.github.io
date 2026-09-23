@@ -26,7 +26,8 @@ const advisors = [
 const excludedAuthors = new Set([
   'Diogo S. Carvalho', 'Diogo Carvalho', ...advisors.map(advisor => advisor.name),
   'Yuri Vorontsov', 'Anastasia Vorontsov', 'Anna Platonova', 'Vladimir Gorovoy',
-  'Ilya Briskin', 'Felix Tseitlin', 'Fabio A. Faria', 'Ana Paiva'
+  'Ilya Briskin', 'Felix Tseitlin', 'Fabio A. Faria', 'Ana Paiva',
+  'Manuel Guimarães', 'Ana Antunes'
 ]);
 const coauthors = [...new Set(pubs.flatMap(pub => pub.data.authors))]
   .filter(name => !excludedAuthors.has(name))
