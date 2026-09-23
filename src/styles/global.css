@@ -124,3 +124,11 @@
 .personal-updates span{font-size:12px}
 .personal-updates li small{font-size:12px}
 .personal-notes strong{font-size:12px}
+
+/* Compact contact details while keeping addresses and copy controls easy to use. */
+.footer{padding-top:64px;row-gap:34px;column-gap:50px}
+.footer h2{font-size:clamp(34px,3.8vw,52px);margin:0}
+.contact-list{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:center}
+.contact-list p{grid-column:1/-1;margin:12px 0 2px}
+.contact-list>a{font-size:clamp(15px,1.25vw,18px);overflow-wrap:anywhere}
+.copy-email{display:inline-flex;align-items:center;justify-content:center;min-height:36px;margin:0;padding:6px 10px;cursor:pointer}
