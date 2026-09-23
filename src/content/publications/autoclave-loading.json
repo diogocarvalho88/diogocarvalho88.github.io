@@ -1,7 +1,7 @@
 {
   "title": "Optimizing 2D Packing Strategies for Autoclave Loading Using Deep Reinforcement Learning",
   "authors": ["Victor U. Pugliese", "Diogo S. Carvalho", "Oseias F. Ferreira", "Fabio A. Faria", "Francisco S. Melo"],
-  "venue": "Progress in Artificial Intelligence (EPIA 2025)", "year": 2026, "status": "conference",
+  "venue": "Progress in Artificial Intelligence (EPIA 2025)", "year": 2025, "status": "conference",
   "topics": ["Reinforcement Learning", "Applied AI"], "featured": false,
   "doi": "https://doi.org/10.1007/978-3-032-05179-0_4", "materials": ["autoclave-epia-slides"],
   "abstract": "A deep reinforcement-learning approach to two-dimensional packing for autoclave loading in aerospace manufacturing.",

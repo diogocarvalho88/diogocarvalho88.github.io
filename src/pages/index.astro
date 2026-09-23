@@ -8,12 +8,12 @@ const selectedIds = ['multi-bellman', 'nonstationary', 'feudal', 'qlearning'];
 const pubs = allPubs.filter(pub => selectedIds.includes(pub.id)).sort((a,b) => selectedIds.indexOf(a.id)-selectedIds.indexOf(b.id));
 const materials = await getCollection('materials');
 const materialIndex = new Map(materials.map(item => [item.id, item]));
-const events = (await getCollection('events')).filter(event => event.data.featured).sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0,3);
+const events = (await getCollection('events')).filter(event => event.data.featured).sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0,4);
 const latestPublications = allPubs.sort((a,b) => b.data.year-a.data.year).slice(0,3);
 const news = [
-  ...events.map(event => ({ sortKey: event.data.date ?? '', date: event.data.date ?? '', dateLabel: event.data.dateLabel ?? new Date(event.data.date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}), type: event.data.type, title: event.data.title, venue: event.data.venue, url: event.data.officialUrl ?? '/research/' })),
-  ...latestPublications.map(pub => ({ sortKey: `${pub.data.year}-01-01`, date: String(pub.data.year), dateLabel: String(pub.data.year), type: 'publication', title: pub.data.title, venue: pub.data.venue, url: pub.data.doi ?? pub.data.pdf ?? '/research/' }))
-].sort((a,b) => b.sortKey.localeCompare(a.sortKey));
+  ...events.map(event => ({ sortKey: event.data.date ?? '', date: event.data.date ?? '', dateLabel: event.data.dateLabel ?? new Date(event.data.date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}), type: event.data.type, title: event.data.title, venue: event.data.venue, url: event.data.projectUrl ?? event.data.officialUrl ?? '/research/' })),
+  ...latestPublications.map(pub => ({ sortKey: `${pub.data.year}-01-01`, date: String(pub.data.year), dateLabel: String(pub.data.year), type: 'publication', title: pub.data.title, venue: pub.data.venue, url: pub.data.project ?? pub.data.doi ?? pub.data.pdf ?? '/research/' }))
+].sort((a,b) => b.sortKey.localeCompare(a.sortKey)).slice(0,6);
 ---
 <BaseLayout title="Diogo S. Carvalho — Research Scientist & AI Engineer" description="Research scientist and AI engineer studying reinforcement learning, hierarchical decision-making, planning, multi-agent systems, and reliable agentic AI.">
   <section class="hero shell">

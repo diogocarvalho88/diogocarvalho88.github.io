@@ -42,9 +42,12 @@ export const personalUpdates = [
     { title: 'Assassin’s Creed: The Rebel Collection', detail: 'Black Flag & Rogue · Nintendo Switch', url: 'https://www.ubisoft.com/en-us/game/assassins-creed/rebel-collection' }
   ] },
   { label: 'Watching', entries: [
-    { title: 'The Gentlemen, Only Murders in the Building & Reacher', detail: 'Series', url: null },
-    { title: 'Game of Thrones', detail: 'Rewatch', url: null },
-    { title: 'Odisseia & Obsession', detail: 'Recent films I enjoyed', url: null }
+    { title: 'The Gentlemen', detail: 'Series', url: 'https://www.imdb.com/title/tt13210838/' },
+    { title: 'Only Murders in the Building', detail: 'Series', url: 'https://www.imdb.com/title/tt11691774/' },
+    { title: 'Reacher', detail: 'Series', url: 'https://www.imdb.com/title/tt9288030/' },
+    { title: 'Game of Thrones', detail: 'Rewatch', url: 'https://www.imdb.com/title/tt0944947/' },
+    { title: 'The Odyssey', detail: 'Film', url: 'https://www.imdb.com/title/tt33764258/' },
+    { title: 'Obsession', detail: 'Film', url: 'https://www.imdb.com/title/tt37287335/' }
   ] }
 ] as const;
 

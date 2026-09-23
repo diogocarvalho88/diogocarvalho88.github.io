@@ -19,7 +19,7 @@ const events = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/events' }),
   schema: z.object({
     title: z.string(), venue: z.string(), date: z.string().optional(), dateLabel: z.string().optional(),
-    type: z.enum(['talk','presentation','teaching','milestone']), officialUrl: z.url().optional(),
+    type: z.enum(['talk','presentation','teaching','milestone']), officialUrl: z.url().optional(), projectUrl: z.url().optional(),
     materials: z.array(reference('materials')).default([]), featured: z.boolean().default(false),
     description: z.string()
   })
