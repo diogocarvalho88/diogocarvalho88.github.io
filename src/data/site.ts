@@ -30,14 +30,18 @@ export const personalProfiles = [
 
 export const currentlyReading = [
   { title: 'Bambino a Roma', detail: 'Chico Buarque', url: 'https://penguinlivros.pt/loja/companhia-das-letras/livro/bambino-a-roma/' },
-  { title: 'O Caçador de Elefantes Invisíveis', detail: 'Mia Couto', url: 'https://www.bertrand.pt/livro/o-cacador-de-elefantes-invisiveis-mia-couto/25460181' },
-  { title: 'À Caça de Sombras', detail: 'Robert Bryndza', url: 'https://almadoslivros.pt/products/a-caca-de-sombras' }
+  { title: 'The Invisible Elephant Hunter', detail: 'Mia Couto', url: 'https://www.bertrand.pt/livro/o-cacador-de-elefantes-invisiveis-mia-couto/25460181' },
+  { title: 'Chasing Shadows', detail: 'Robert Bryndza', url: 'https://www.robertbryndza.com/products/chasing-shadows' },
+  { title: 'Lethal Vengeance', detail: 'Robert Bryndza', url: 'https://www.robertbryndza.com/products/lethal-vengeance' },
+  { title: 'Immortality', detail: 'Milan Kundera', url: 'https://www.bertrand.pt/livro/a-imortalidade-milan-kundera/24259254' }
 ] as const;
 
 export const personalUpdates = [
-  { label: 'Reading now', entries: [...currentlyReading] },
+  { label: 'Books', entries: [...currentlyReading] },
   { label: 'Playing · Nintendo Switch', entries: [
-    { title: 'Pokémon FireRed, Sword & Brilliant Diamond', detail: 'Pokémon', url: 'https://www.pokemon.com/us/pokemon-video-games/' },
+    { title: 'Pokémon FireRed', detail: 'Nintendo Switch', url: 'https://www.pokemon.com/us/pokemon-video-games/pokemon-firered-version-and-pokemon-leafgreen-version' },
+    { title: 'Pokémon Sword', detail: 'Nintendo Switch', url: 'https://www.pokemon.com/us/pokemon-video-games/pokemon-sword-and-pokemon-shield' },
+    { title: 'Pokémon Brilliant Diamond', detail: 'Nintendo Switch', url: 'https://diamondpearl.pokemon.com/en-us/' },
     { title: 'Hogwarts Legacy', detail: 'Nintendo Switch', url: 'https://www.hogwartslegacy.com/' },
     { title: 'Assassin’s Creed: The Rebel Collection', detail: 'Black Flag & Rogue · Nintendo Switch', url: 'https://www.ubisoft.com/en-us/game/assassins-creed/rebel-collection' }
   ] },
@@ -46,8 +50,7 @@ export const personalUpdates = [
     { title: 'Only Murders in the Building', detail: 'Series', url: 'https://www.imdb.com/title/tt11691774/' },
     { title: 'Reacher', detail: 'Series', url: 'https://www.imdb.com/title/tt9288030/' },
     { title: 'Game of Thrones', detail: 'Rewatch', url: 'https://www.imdb.com/title/tt0944947/' },
-    { title: 'The Odyssey', detail: 'Film', url: 'https://www.imdb.com/title/tt33764258/' },
-    { title: 'Obsession', detail: 'Film', url: 'https://www.imdb.com/title/tt37287335/' }
+    { title: 'The Odyssey', detail: 'Film', url: 'https://www.imdb.com/title/tt33764258/' }
   ] }
 ] as const;
 
