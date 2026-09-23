@@ -139,3 +139,7 @@
 .footer-profiles>div{display:flex;flex-wrap:wrap;gap:10px 26px}
 .footer-profiles a,.footer-profiles a:nth-child(3n+2),.footer-profiles a:nth-child(3n+3){display:inline;padding:0;border:0;font-size:13px;font-weight:500}
 @media(max-width:580px){.footer-profiles{flex-direction:column;align-items:flex-start;gap:8px}}
+
+.timeline .role-org{display:block;font-size:14px;line-height:1.6}
+.timeline .role-org a{text-decoration-color:var(--line);text-underline-offset:3px}
+.timeline .role-org a:hover{color:#8c6b00;text-decoration-color:currentColor}
