@@ -143,3 +143,5 @@
 .timeline .role-org{display:block;font-size:14px;line-height:1.6}
 .timeline .role-org a{text-decoration-color:var(--line);text-underline-offset:3px}
 .timeline .role-org a:hover{color:#8c6b00;text-decoration-color:currentColor}
+
+.timeline .role-funding{display:inline-block;margin-top:2px;font:500 12px var(--mono);text-underline-offset:3px}
