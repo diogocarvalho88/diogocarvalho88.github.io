@@ -1,6 +1,6 @@
 {
-  "title": "Reinforcement Learning in Convergently Non-Stationary Environments: Feudal Hierarchies and Learned Representations", "authors": ["Diogo S. Carvalho", "Pedro P. Santos", "Francisco S. Melo"],
+  "title": "Reinforcement Learning in Convergently Non-Stationary Environments: Feudal Hierarchies and Learned Representations", "authors": ["Diogo S. Carvalho", "Pedro A. Santos", "Francisco S. Melo"],
   "venue": "Artificial Intelligence", "year": 2025, "status": "journal", "topics": ["Reinforcement Learning", "Hierarchies"], "featured": true,
   "doi": "https://doi.org/10.1016/j.artint.2025.104382", "abstract": "A principled treatment of reinforcement learning when environment dynamics converge over time, using hierarchical structure and learned representations.",
-  "bibtex": "@article{carvalho2025nonstationary, title={Reinforcement Learning in Convergently Non-Stationary Environments: Feudal Hierarchies and Learned Representations}, author={Carvalho, Diogo S. and Santos, Pedro P. and Melo, Francisco S.}, journal={Artificial Intelligence}, volume={347}, pages={104382}, year={2025}, doi={10.1016/j.artint.2025.104382}}"
+  "bibtex": "@article{carvalho2025nonstationary, title={Reinforcement Learning in Convergently Non-Stationary Environments: Feudal Hierarchies and Learned Representations}, author={Carvalho, Diogo S. and Santos, Pedro A. and Melo, Francisco S.}, journal={Artificial Intelligence}, volume={347}, pages={104382}, year={2025}, doi={10.1016/j.artint.2025.104382}}"
 }
